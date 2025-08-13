@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 5: Basic Computer Tasks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="Favicon.png" rel="icon" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #ECE5E5;
+      color: #1B4557;
+      min-height: 100vh;
+      display: flex;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: #1E0B0E;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .main-content p, .main-content ul, .main-content ol {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 500;
+      font-size: 14pt;
+      color: #000;
+      line-height: 1.7;
+    }
+    .main-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    .main-content th, .main-content td {
+      border: 1px solid #ECE5E5;
+      padding: 0.75rem;
+      text-align: left;
+      font-size: 1rem;
+      background: #fff;
+      color: #000;
+    }
+    .main-content th {
+      background: #CCB8B8;
+      color: #000;
+      font-weight: 700;
+    }
+    a {
+      color: #345995;
+      text-decoration: underline;
+    }
+    a:focus, a:hover {
+      outline: 2px solid #345995;
+      outline-offset: 2px;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 220px;
+      background-color: #0E0607;
+      color: #F9F9F9;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 120px;
+      z-index: 10;
+      box-shadow: 2px 0 8px rgba(27,69,87,0.08);
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    .sidebar li {
+      width: 100%;
+    }
+    .sidebar a {
+      display: block;
+      color: #F9F9F9;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid transparent;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .sidebar a:focus, .sidebar a:hover, .sidebar a[aria-current="page"] {
+      color: #345995;
+      background: #FDF6ED;
+      border-left: 4px solid #345995;
+      outline: 2px solid #345995;
+      outline-offset: 2px;
+    }
+    .layout {
+      margin-left: 220px;
+      width: calc(100vw - 220px);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #ECE5E5;
+      box-sizing: border-box;
+    }
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background: #ECE5E5;
+      border-bottom: 2px solid #ECE5E5;
+    }
+    .banner-img {
+      width: 100%;
+      height: 720px;
+      object-fit: cover;
+      object-position: bottom;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+    .banner-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      text-align: center;
+      color: #1E0B0E;
+      font-size: 2rem;
+      font-weight: 700;
+      background: rgba(236,229,229,0.7);
+      border-radius: 0 0 1rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0;
+    }
+    .main-content {
+      flex: 1;
+      padding: 2rem;
+      background: #ECE5E5;
+      border-radius: 0 0 1rem 1rem;
+      box-sizing: border-box;
+      min-height: 400px;
+    }
+    .nav-btn {
+      display: inline-block;
+      background-color: #345995;
+      color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.75rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      margin: 0 0.5rem;
+    }
+    .nav-btn:focus, .nav-btn:hover {
+      background-color: #1E0B0E;
+      color: #ECE5E5;
+      outline: 2px solid #345995;
+      outline-offset: 2px;
+    }
+    .prev-btn {
+      margin-right: auto;
+    }
+    .next-btn {
+      margin-left: auto;
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Main navigation" class="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="lessons.html">Lessons</a></li>
+      <li><a href="files.html">Files</a></li>
+    </ul>
+  </nav>
+  <div class="layout">
+    <div class="banner" role="banner">
+      <img src="banner image.jpg" alt="SR 101 Banner" class="banner-img" />
+      <div class="banner-content">
+        <h1 style="color:#1E0B0E; margin:0; position:relative; z-index:2;">Lesson 5: Basic Computer Tasks</h1>
+      </div>
+    </div>
+    <main class="main-content" id="main-content" tabindex="-1">
+      <p>It's good to start with the basics so you and your student can feel in control as you move on to increasingly complex tasks. These commands and concepts will come up again and again as your screen reader use advances, so it's a good idea to spend time familiarizing yourself with these commands and tasks.</p>
+      <h2>Getting Started</h2>
+      <p>In the table below, "Stop speech" is absolutely a priority. Screen readers can go on and on, and we want users to feel confident that they can start and stop speech as needed so they can attend to their lessons or other conversations.</p>
+      <table aria-label="Getting Started Computer Tasks">
+        <thead>
+          <tr>
+            <th scope="col">Task</th>
+            <th scope="col">Keyboard Command</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Stop speech</td>
+            <td>Ctrl</td>
+          </tr>
+          <tr>
+            <td>Checking the time</td>
+            <td>JAWS/NVDA + F12</td>
+          </tr>
+          <tr>
+            <td>Shut Down</td>
+            <td>Windows + X, U, U</td>
+          </tr>
+          <tr>
+            <td>Restart</td>
+            <td>Windows + X, U, R</td>
+          </tr>
+          <tr>
+            <td>Sleep</td>
+            <td>Windows + X, U, S</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Exploring the Desktop</h2>
+      <p>The Desktop is your main hub for your computer. This is a convenient place to store important files for quick access. The Task Bar and System Tray are also important areas to familiarize yourself with. The Task Bar contains shortcuts to your favorite programs or files. You can customize the Task Bar to include the shortcuts that work best for you. The System Tray hosts a variety of important tools related to your computer's operations. Things like Wi-Fi networks, battery life, thumb drives, and Bluetooth settings can all be found in the System Tray.</p>
+      <div style="display: flex; justify-content: center; margin: 2rem 0;">
+        <img src="Desktop.png" alt="Windows Desktop with labels for Desktop (main area), Task Bar (bottom left), and System Tray (bottom right)" style="max-width: 70%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);" />
+      </div>
+      <table aria-label="Desktop Computer Tasks">
+        <thead>
+          <tr>
+            <th scope="col">Task</th>
+            <th scope="col">Keyboard Command</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Show/Move to Desktop</td>
+            <td>Windows key + D</td>
+          </tr>
+          <tr>
+            <td>Move to System Tray</td>
+            <td>Windows key + B</td>
+          </tr>
+          <tr>
+            <td>Move to Task Bar</td>
+            <td>Windows key + T</td>
+          </tr>
+          <tr>
+            <td>Minimize all windows</td>
+            <td>Windows key + M</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+        <a href="basic-keys-and-modifier-keys.html" class="nav-btn prev-btn" role="button" aria-label="Go to Lesson 4: Basic Keys and Modifier Keys" tabindex="0">&larr; Previous</a>
+        <a href="working-with-applications.html" class="nav-btn next-btn" role="button" aria-label="Go to the next Lesson 6: Working with Applications" tabindex="0">Next &rarr;</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

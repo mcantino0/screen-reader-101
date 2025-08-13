@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 4: Basic Keys and Modifier Keys</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="Favicon.png" rel="icon" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #ECE5E5;
+      color: #1B4557;
+      min-height: 100vh;
+      display: flex;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: #1E0B0E;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .main-content p, .main-content ul, .main-content ol {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 500;
+      font-size: 14pt;
+      color: #000;
+      line-height: 1.7;
+    }
+    .main-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+      .main-content th, .main-content td {
+        border: 1px solid #ECE5E5;
+        padding: 0.75rem;
+        text-align: left;
+        font-size: 1rem;
+        background: #fff;
+        color: #000;
+      }
+      .main-content th {
+        background: #CCB8B8;
+        color: #000;
+        font-weight: 700;
+      }
+    .main-content caption {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #1E0B0E;
+      text-align: left;
+    }
+    a {
+      color: #345995;
+      text-decoration: underline;
+    }
+    a:focus, a:hover {
+      outline: 2px solid #345995;
+      outline-offset: 2px;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 220px;
+      background-color: #0E0607;
+      color: #F9F9F9;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 120px;
+      z-index: 10;
+      box-shadow: 2px 0 8px rgba(27,69,87,0.08);
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    .sidebar li {
+      width: 100%;
+    }
+    .sidebar a {
+      display: block;
+      color: #F9F9F9;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid transparent;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .sidebar a:focus, .sidebar a:hover, .sidebar a[aria-current="page"] {
+      color: #345995;
+      background: #FDF6ED;
+      border-left: 4px solid #345995;
+      outline: 2px solid #345995;
+      outline-offset: 2px;
+    }
+    .layout {
+      margin-left: 220px;
+      width: calc(100vw - 220px);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #ECE5E5;
+      box-sizing: border-box;
+    }
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background: #ECE5E5;
+      border-bottom: 2px solid #ECE5E5;
+    }
+    .banner-img {
+      width: 100%;
+      height: 720px;
+      object-fit: cover;
+      object-position: bottom;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+    .banner-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      text-align: center;
+      color: #1E0B0E;
+      font-size: 2rem;
+      font-weight: 700;
+      background: rgba(236,229,229,0.7);
+      border-radius: 0 0 1rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0;
+    }
+    .main-content {
+      flex: 1;
+      padding: 2rem;
+      background: #ECE5E5;
+      border-radius: 0 0 1rem 1rem;
+      box-sizing: border-box;
+      min-height: 400px;
+    }
+    .nav-btn {
+      display: inline-block;
+      background-color: #345995;
+      color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.75rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      margin: 0 0.5rem;
+    }
+    .nav-btn:focus, .nav-btn:hover {
+      background-color: #1E0B0E;
+      color: #ECE5E5;
+      outline: 2px solid #345995;
+      outline-offset: 2px;
+    }
+    .prev-btn {
+      margin-right: auto;
+    }
+    .next-btn {
+      margin-left: auto;
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Main navigation" class="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="lessons.html">Lessons</a></li>
+      <li><a href="files.html">Files</a></li>
+    </ul>
+  </nav>
+  <div class="layout">
+    <div class="banner" role="banner">
+      <img src="banner image.jpg" alt="SR 101 Banner" class="banner-img" />
+      <div class="banner-content">
+        <h1 style="color:#1E0B0E; margin:0; position:relative; z-index:2;">Lesson 4: Basic Keys and Modifier Keys</h1>
+      </div>
+    </div>
+    <main class="main-content" id="main-content" tabindex="-1">
+      <p>Getting started with screen readers can be intimidating, particularly for sighted users. Luckily, most screen reader functions are completed with a small collection of keys. Once you understand how to utilize these keys effectively, learning to navigate your computer with a screen reader will seem much more manageable. As you review the list below, you will likely find that you're already familiar with these keys and their functions.</p>
+        <p style="margin-left: 2em;"><strong>Teaching Tip:</strong> When you first introduce a screen reader to a student, take some time to review their keyboard layout. Every keyboard is slightly different, and it's a good idea to confirm that your student knows where each of these keys are located on their device. This is a low-stress introduction to a screen reader lesson that can help your student feel successful before they start working with their screen reader.</p>
+      <h2>Basic Keys</h2>
+  <p>These basic keys will help you do some simple navigation and interaction within programs.</p>
+      <table aria-label="Basic Keys and their Functions">
+          <!-- <caption>Basic Keys and their Functions</caption> -->
+        <thead>
+          <tr>
+            <th scope="col">Key</th>
+            <th scope="col">Function</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Arrow Keys</td>
+            <td>Move through content sequentially. Arrow keys will not skip over any content.</td>
+          </tr>
+          <tr>
+            <td>Tab</td>
+            <td>Move to interactive, or “clickable” elements (links, buttons, form fields, etc.). The tab key will skip over simple text content.</td>
+          </tr>
+          <tr>
+            <td>Spacebar</td>
+            <td>Interact with an element. This is typically not a final action.</td>
+          </tr>
+          <tr>
+            <td>Enter</td>
+            <td>Activate or interact with an element. Enter is often used to finalize an action.</td>
+          </tr>
+          <tr>
+            <td>Esc</td>
+            <td>Cancel various actions</td>
+          </tr>
+          <tr>
+            <td>F6</td>
+            <td>Move to different areas of an application. If you can’t seem to reach a particular area in an app, try using F6.</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Modifier Keys</h2>
+  <p>Modifier keys are used in combination with other keys, typically by being held down while another key is pressed. Modifier keys are used to modify the behavior of the key(s) they are combined with.</p>
+      <table aria-label="Modifier Keys and their Functions">
+          <!-- <caption>Modifier Keys and their Functions</caption> -->
+        <thead>
+          <tr>
+            <th scope="col">Key</th>
+            <th scope="col">Function</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ctrl</td>
+            <td>Perform a shortcut command. Many of these commands remain the same across different programs.</td>
+          </tr>
+          <tr>
+            <td>Alt</td>
+            <td>Perform an Alternate action, usually an action specific to a program.</td>
+          </tr>
+          <tr>
+            <td>Windows Key</td>
+            <td>Perform a Windows shortcut. These are more global and tend to work outside of programs.</td>
+          </tr>
+          <tr>
+            <td>Shift</td>
+            <td>When used with a keyboard command, Shift typically does a command related to the original command, often the opposite.</td>
+          </tr>
+          <tr>
+            <td>JAWS/NVDA Keys</td>
+            <td>Either Insert or Caps Lock, depending on your settings. Used to perform JAWS- or NVDA-specific commands.</td>
+          </tr>
+          <tr>
+            <td>Fn or Function Key</td>
+              <td>Access a key’s secondary function (usually indicated with smaller text on a key). Consider using the <a href="https://www.computerhope.com/jargon/f/f-lock-key.htm" target="_blank" rel="noopener">Function Lock</a>.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem;">
+        <a href="commonly-used-keys-and-their-functions.html" class="nav-btn prev-btn" role="button" aria-label="Go to Lesson 3: Commonly Used Keys and Their Functions" tabindex="0">&larr; Previous</a>
+        <div style="flex: 1; display: flex; justify-content: center;">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_3PhvBhguDz8AuhPZF0IVuwsC3FLVGSlxJmZTGIqwtSjesA/viewform?usp=dialog" class="nav-btn" role="button" aria-label="Go to Quiz 2" tabindex="0" target="_blank" rel="noopener">Quiz</a>
+        </div>
+        <a href="basic-computer-tasks.html" class="nav-btn next-btn" role="button" aria-label="Go to Lesson 5: Basic Computer Tasks" tabindex="0">Next &rarr;</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
