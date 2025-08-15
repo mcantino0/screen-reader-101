@@ -35,24 +35,24 @@
       color: #000;
       line-height: 1.7;
     }
-    .main-content table {
+    table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 2rem;
+      margin: 2rem auto;
+      background: #fff;
+      color: #1E0B0E;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 14pt;
     }
-      .main-content th, .main-content td {
-        border: 1px solid #ECE5E5;
-        padding: 0.75rem;
-        text-align: left;
-        font-size: 1rem;
-        background: #fff;
-        color: #000;
-      }
-      .main-content th {
-        background: #CCB8B8;
-        color: #000;
-        font-weight: 700;
-      }
+    th, td {
+      border: 1px solid #ECE5E5;
+      padding: 0.75rem;
+      text-align: left;
+    }
+    th {
+      background: #CCB8B8;
+      font-weight: 700;
+    }
     .main-content caption {
       font-weight: 700;
       font-size: 1.1rem;
@@ -233,8 +233,12 @@
         <p style="margin-left: 2em;"><strong>Teaching Tip:</strong> When you first introduce a screen reader to a student, take some time to review their keyboard layout. Every keyboard is slightly different, and it's a good idea to confirm that your student knows where each of these keys are located on their device. This is a low-stress introduction to a screen reader lesson that can help your student feel successful before they start working with their screen reader.</p>
       <h2>Basic Keys</h2>
   <p>These basic keys will help with simple navigation and interactions within programs.</p>
-      <table aria-label="Basic Keys and their Functions">
-          <!-- <caption>Basic Keys and their Functions</caption> -->
+      <table style="width: 85%;" aria-label="Basic Keys and their Functions">
+                <colgroup>
+    <col style="width: 13%;">
+    <col style="width: 87%;">
+  </colgroup>
+
         <thead>
           <tr>
             <th scope="col">Key</th>
@@ -270,8 +274,11 @@
       </table>
       <h2>Modifier Keys</h2>
   <p>Modifier keys are used in combination with other keys, typically by being held down while another key is pressed. Modifier keys are used to modify the behavior of the key(s) they are combined with.</p>
-      <table aria-label="Modifier Keys and their Functions">
-          <!-- <caption>Modifier Keys and their Functions</caption> -->
+      <table style="width: 90%;" aria-label="Modifier Keys and their Functions">
+        <colgroup>
+    <col style="width: 18%;">
+    <col style="width: 82%;">
+  </colgroup>
         <thead>
           <tr>
             <th scope="col">Key</th>

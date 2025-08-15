@@ -35,22 +35,22 @@
       color: #000;
       line-height: 1.7;
     }
-    .main-content table {
+    table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 2rem;
+      margin: 2rem auto;
+      background: #fff;
+      color: #1E0B0E;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 14pt;
     }
-    .main-content th, .main-content td {
+    th, td {
       border: 1px solid #ECE5E5;
       padding: 0.75rem;
       text-align: left;
-      font-size: 1rem;
-      background: #fff;
-      color: #000;
     }
-    .main-content th {
+    th {
       background: #CCB8B8;
-      color: #000;
       font-weight: 700;
     }
     a {
@@ -193,6 +193,13 @@
     .next-btn {
       margin-left: auto;
     }
+    kbd {
+  font-weight: bold;
+  background: #E0E0E0;
+  border: 1px solid #B8B8B8;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
   </style>
 </head>
 <body>
@@ -216,8 +223,8 @@
     </div>
     <main class="main-content" id="main-content" tabindex="-1">
       <h2>Basic Text Navigation and Commands</h2>
-      <p>When working with text, you'll primarily be using your arrow keys and the Control key. The arrow keys provide very basic movement, and the Control key will help you move through groups of items. When you're ready to select text, just hold down the Shift key while you move through your document. The Shift key will select any text that you move through. That's pretty much it!</p>
-      <table aria-label="Basic Text Navigation">
+      <p>When working with text, you'll primarily be using your arrow keys and the <kbd>Control</kbd> key. The arrow keys provide very basic movement, and the <kbd>Control</kbd> key will help you move through groups of items. When you're ready to select text, just hold down the <kbd>Shift</kbd> key while you move through your document. The <kbd>Shift</kbd> key will select any text that you move through. That's pretty much it!</p>
+      <table style="width: 90%;" aria-label="Basic Text Navigation">
         <thead>
           <tr>
             <th scope="col">Task</th>
@@ -285,7 +292,7 @@
       </table>
       <h2>Working with Selected Text</h2>
       <p>It's a good idea to memorize a few basic text commands to help you work with text effectively.</p>
-      <table aria-label="Working with Selected Text">
+      <table style="width: 65%;" aria-label="Working with Selected Text">
         <thead>
           <tr>
             <th scope="col">Task</th>
