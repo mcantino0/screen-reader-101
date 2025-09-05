@@ -185,7 +185,7 @@
       }
       .sidebar a:focus, .sidebar a:hover, .sidebar a[aria-current="page"] {
         border-bottom: 3px solid #345995;
-        background: #D5E4D9;
+        background: #ECE5E5;
         color: #345995;
       }
       .layout {
@@ -193,7 +193,47 @@
         width: 100vw;
       }
       .banner {
-        height: 80px;
+        height: auto;
+        min-height: 60px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .banner-content {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        text-align: center;
+        word-break: break-word;
+        white-space: normal;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(236,229,229,0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0;
+        min-height: 60px;
+        height: 100%;
+      }
+      .banner-content h1 {
+        font-size: 1.6rem;
+        margin: 0 auto;
+        word-break: break-word;
+        white-space: normal;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 100vw;
+        overflow-wrap: break-word;
+        padding-right: 0;
+        background: transparent;
       }
       .main-content {
         padding: 1rem;
@@ -232,7 +272,7 @@
         <li>Managing your files</li>
         <li>Reading and editing text</li>
       </ul>
-      <p>To begin the course, just follow the <strong>Lessons</strong> link in the navigation panel. All the quizzes in the course are optional. If you pass all of the quizzes, you will receive a certificate for 3 PDU hours (Oregon teachers only).</p>
+      <p>To begin the course, just follow the <strong>Lessons</strong> link in the navigation panel. All the quizzes in the course are optional. If you pass all of the quizzes, you will receive a certificate for 5 CTE hours.</p>
       <h2>Helpful Resources</h2>
       <p>This course is based on this <a href="https://docs.google.com/document/d/1nxzcaHiisRW0RhMxITSkkjoNKWlF6qWb/edit?usp=sharing&ouid=117616702078343735952&rtpof=true&sd=true" target="_blank" rel="noopener">JAWS and NVDA: Basic Computer Navigation document</a>. You may find it helpful to refer to this document while working through the course. The document includes a short video demonstration of all the keyboard commands covered in this course (also included in Lesson 2).</p>
       <p>Check the <strong>Resources</strong> link for a data tracking sheet, sample lesson plans, AI assistants and more!</p>
@@ -240,5 +280,3 @@
   </div>
 </body>
 </html>
-
-

@@ -164,6 +164,88 @@
     .next-btn {
       margin-left: auto;
     }
+    @media (max-width: 600px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        padding-top: 0;
+        box-shadow: none;
+      }
+      .sidebar ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .sidebar li {
+        width: auto;
+      }
+      .sidebar a {
+        padding: 0.5rem 1rem;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+      }
+      .sidebar a:focus, .sidebar a:hover, .sidebar a[aria-current="page"] {
+        border-bottom: 3px solid #345995;
+        background: #ECE5E5;
+        color: #345995;
+      }
+      .layout {
+        margin-left: 0;
+        width: 100vw;
+      }
+      .banner {
+        height: auto;
+        min-height: 60px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .banner-content {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        text-align: center;
+        word-break: break-word;
+        white-space: normal;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(236,229,229,0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0;
+        min-height: 60px;
+        height: 100%;
+      }
+      .banner-content h1 {
+        font-size: 1.6rem;
+        margin: 0 auto;
+        word-break: break-word;
+        white-space: normal;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 100vw;
+        overflow-wrap: break-word;
+        padding-right: 1.5rem; /* Increased right padding to prevent scroll bar overlap */
+        background: transparent;
+      }
+      .main-content {
+        padding: 1rem;
+      }
+    }
   </style>
     <nav aria-label="Main navigation" class="sidebar">
     <div style="width:100%; text-align:center; margin-top:0; margin-bottom:1rem;">
